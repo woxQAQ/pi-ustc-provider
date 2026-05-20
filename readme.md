@@ -6,7 +6,7 @@ use
 # Quick start
 
 ```sh
-pi install git:github.com/woxQAQ/pi-provider-ustc
+pi install git:github.com/woxQAQ/pi-ustc-provider
 ```
 
 Then export your API key `USTC_API_KEY` according to shell you use
