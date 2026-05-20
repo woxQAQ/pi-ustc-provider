@@ -11,12 +11,6 @@
  *
  * Then set your API key:
  *   export USTC_API_KEY="sk-your-api-key"
- *
- * Models are selected via /model:
- *   /model ustc/deepseek-v4-flash
- *   /model ustc/qwen3.6-35b-a3b
- *   /model ustc/qwen3.6-27b
- *   /model ustc/deepseek-v4-pro
  */
 
 import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
