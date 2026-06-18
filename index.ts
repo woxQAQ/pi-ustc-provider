@@ -36,16 +36,55 @@ const BASE_URL = "https://api.llm.ustc.edu.cn/v1";
 const MODELS = [
   {
     id: "deepseek-v4-flash-ascend",
-    name: "DeepSeek V4 Flash (USTC)",
+    name: "DeepSeek V4 Flash",
     reasoning: true,
     input: ["text"],
     cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
     contextWindow: 1_000_000,
-    maxTokens: 8192,
+    maxTokens: 384_000,
     compat: {
       thinkingFormat: "deepseek" as const,
     },
   },
+  {
+    id: "deepseek-v4-pro",
+    name: "DeepSeek V4 Pro",
+    reasoning: true,
+    input: ["text"],
+		cost: {
+			input: 0.435,
+			output: 0.87,
+			cacheRead: 0.003625,
+			cacheWrite: 0,
+		},
+    contextWindow: 1_000_000,
+    maxTokens: 384_000,
+    compat: {
+      thinkingFormat: "deepseek",
+			requiresReasoningContentOnAssistantMessages:true,
+    },
+  },
+  {
+    id: "glm-5.2",
+    name: "GLM 5.2",
+    reasoning: true,
+    input: ["text"],
+    contextWindow: 1_000_000,
+    maxTokens: 131_072,
+		cost: {
+			input: 1.4,
+			output: 4.4,
+			cacheRead: 0.26,
+			cacheWrite: 0,
+		},
+		compat: {
+		  "supportsDeveloperRole":false,
+		  "thinkingFormat":"zai",
+		  "supportsReasoningEffort":true,
+		  "zaiToolStream":true
+		},
+    thinkingLevelMap: {"minimal":null,"low":"high","medium":"high","high":"high","xhigh":"max"},
+  }
 ];
 
 // =============================================================================
