@@ -95,7 +95,7 @@ export default function (pi: ExtensionAPI) {
   pi.registerProvider("ustc", {
     name: "USTC 大模型公共服务平台",
     baseUrl: BASE_URL,
-    apiKey: "USTC_API_KEY",
+    apiKey: "$USTC_API_KEY",
     api: "openai-completions",
     models: MODELS,
   });
